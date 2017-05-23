@@ -96,7 +96,6 @@ class CSP:
     def display(self,assignment):
         line = '------+------+------'
         for r in CSP.rows:
-
             print ''.join( assignment[r+c].center(2) + ('|' if c in '36' else '') for c in CSP.columns )
             if r in 'CF': print line
         print '\n'
