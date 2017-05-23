@@ -95,13 +95,12 @@ class CSP:
         return False
 
     def display(self,assignment):
-        "Display these values as a 2-D grid."
-        width = 1 + max( len(assignment[s]) for s in CSP.squares )
-        line = '+'.join(['-'*(width*3)]*3)
+        line = '------+------+------'
         for r in CSP.rows:
-            print ''.join(assignment[r+c].center(width)+('|' if c in '36' else '') for c in CSP.columns)
+
+            print ''.join( assignment[r+c].center(2) + ('|' if c in '36' else '') for c in CSP.columns )
             if r in 'CF': print line
-        print
+        print '\n'
 
 def main(argv):
     if(len(argv) != 1):
